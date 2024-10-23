@@ -1,8 +1,9 @@
-import React, { useReducer } from 'react'
+import React, { useReducer, useState } from 'react'
 import { inc, dec, reset } from '../redux/actions'
 import { useDispatch, useSelector } from 'react-redux'
 
 function Counter() {
+    const [inputValue, setInputValue] = useState(0)
     const counter = useSelector(state => state.counterReducer)
     const loginStatus = useSelector(state => state.authReducer)
     console.log(loginStatus)
@@ -14,11 +15,11 @@ function Counter() {
             <h1>{counter}</h1>
             <div>
                 Increase Value:
-                <input type="text" />
+                <input type="number" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
             </div>
             <br />
-            <button onClick={() => dispatch(inc())}>Increase</button>
-            <button onClick={() => dispatch(dec())}>Decrease</button>
+            <button onClick={() => dispatch(inc(inputValue))}>Increase</button>
+            <button onClick={() => dispatch(dec(inputValue))}>Decrease</button>
             <button onClick={() => dispatch(reset())}>Reset</button>
         </div>
     )
