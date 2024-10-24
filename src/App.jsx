@@ -4,6 +4,7 @@ import Counter from './components/Counter'
 import { BrowserRouter, Routes, Route, Navigate, Link } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import SignIn from './components/SignIn';
+import Products from './components/Products';
 function App() {
   const [count, setCount] = useState(0)
 
@@ -14,10 +15,12 @@ function App() {
       <Link to="/">Home</Link>
       <Link to="/counter">Counter</Link>
       <Link to="/signin">Login</Link>
+      <Link to="/products">Products</Link>
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/counter" element={<Counter />} />
+        <Route path="/products" element={<Products />} />
       </Routes>
 
     </>

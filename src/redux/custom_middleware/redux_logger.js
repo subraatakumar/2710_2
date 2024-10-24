@@ -6,7 +6,6 @@ const loggerMiddleware = (store) => (next) => (action) => {
   console.log("Action:", action);
 
   //   let modifiedAction;
-  // Call the next middleware or reducer
   //   if (action.payload > 10) {
   //     modifiedAction = { ...action, payload: 10 };
   //   } else {
@@ -14,6 +13,8 @@ const loggerMiddleware = (store) => (next) => (action) => {
   //   }
   //   console.log("Modified action:", modifiedAction);
   //   const result = next(modifiedAction);
+
+  // Call the next middleware or reducer
   const result = next(action);
 
   console.log("Updated State:", store.getState());

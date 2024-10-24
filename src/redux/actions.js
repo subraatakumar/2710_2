@@ -7,3 +7,13 @@ export const dec = (inputValue) => ({
   payload: parseInt(inputValue),
 });
 export const reset = () => ({ type: "reset" });
+
+export const fetchProductStarted = () => ({ type: "product_fetching" });
+export const fetchProductSuccess = (data) => ({
+  type: "product_success",
+  payload: data,
+});
+export const fetchProductsFailure = (msg) => ({
+  type: "product_failure",
+  payload: msg,
+});
