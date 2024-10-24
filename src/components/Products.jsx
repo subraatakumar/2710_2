@@ -5,6 +5,7 @@ import fetchProducts from '../redux/thunk/fetchProducts';
 function Products() {
     const dispatch = useDispatch();
     const { loading, products, error } = useSelector(state => state.productsReducer)
+
     useEffect(() => {
         dispatch(fetchProducts())
     }, [])
