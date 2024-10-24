@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import fetchProducts from '../redux/thunk/fetchProducts';
+// import fetchProducts from '../redux/thunk/fetchProducts';
+import { fetchProducts } from '../redux/slices/productsSlice';
 
 function Products() {
     const dispatch = useDispatch();

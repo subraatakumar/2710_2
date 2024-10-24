@@ -1,5 +1,6 @@
 import React, { useReducer, useState } from 'react'
-import { inc, dec, reset } from '../redux/actions'
+// import { inc, dec, reset } from '../redux/actions'
+import { inc, dec, reset } from '../redux/slices/counterSlice'
 import { useDispatch, useSelector } from 'react-redux'
 
 function Counter() {
